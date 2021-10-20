@@ -1,5 +1,6 @@
 import React from "react";
 import CardTemp from "./CardTemp";
+import PropTypes from "prop-types";
 
 export default function Card(props) {
   const { max, min, name, img, onClose, id} = props; //destructuring de cosas pasadas por props
@@ -20,4 +21,12 @@ export default function Card(props) {
       />
     </div>
   );
+};
+
+Card.propTypes = {
+  max: PropTypes.number,
+  min: PropTypes.number,
+  name: PropTypes.string,
+  img: PropTypes.string,
+  onClose: PropTypes.func,
 };
