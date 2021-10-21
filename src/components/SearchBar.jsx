@@ -1,24 +1,25 @@
-import React from 'react';
+import React from "react";
 
-
-export default function SearchBar({onSearch}) {
+export default function SearchBar({ onSearch }) {
   // acá va tu código
-    const handleOnSearch = () => {
+  const handleOnSearch = () => {
+    if (typeof onSearch === "function") {
       const input = document.getElementById("searchInput");
       onSearch(input.value);
       input.value = "";
-    };
+    }
+  };
 
-  return <div>
-    <input
-    id="searchInput"
-    placeholder="Buscar una ciudad..."
-    onKeyPress={(e) => {
-      if (e.key === "Enter") handleOnSearch();
-    }}
-    />
-    <button onClick={handleOnSearch}>
-    Buscar
-    </button>
-  </div>
-};
+  return (
+    <div>
+      <input
+        id="searchInput"
+        placeholder="Buscar una ciudad..."
+        onKeyPress={(e) => {
+          if (e.key === "Enter") handleOnSearch();
+        }}
+      />
+      <button onClick={handleOnSearch}>Buscar</button>
+    </div>
+  );
+}

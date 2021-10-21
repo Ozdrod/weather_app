@@ -1,23 +1,32 @@
 import React from "react";
+import CardTemp from "./CardTemp";
+import PropTypes from "prop-types";
 
 export default function Card(props) {
   const { max, min, name, img, onClose, id} = props; //destructuring de cosas pasadas por props
   // acá va tu código
+  function handleOnClose() {
+    if(typeof onClose === "function") onClose();
+  }
   return (
     <div key={id}>
+      <button onClick={handleOnClose}>X</button>
       <span className="cityname">{name}
-      <button onClick={onClose}>X</button>
       </span>
+      <CardTemp label="Min" value={min}/>
+      <CardTemp label="Max" value={max}/>
       <img
         src={`http://openweathermap.org/img/wn/${img}@2x.png`}
         alt="icono del clima"
       />
-      <div>
-        <span>Min</span>
-        <span>{min}º</span>
-        <span>Max</span>
-        <span>{max}º</span>
-      </div>
     </div>
   );
-}
+};
+
+Card.propTypes = {
+  max: PropTypes.number,
+  min: PropTypes.number,
+  name: PropTypes.string,
+  img: PropTypes.string,
+  onClose: PropTypes.func,
+};
