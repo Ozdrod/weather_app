@@ -1,25 +1,27 @@
+import { func } from "prop-types";
 import React from "react";
 
 export default function SearchBar({ onSearch }) {
-  // acá va tu código
-  const handleOnSearch = () => {
+  const [search, setSearch] = React.useState("");
+  const handleOnSearch = (event) => {
+    event.preventDefault();
     if (typeof onSearch === "function") {
-      const input = document.getElementById("searchInput");
-      onSearch(input.value);
-      input.value = "";
+      onSearch(search);
+      setSearch("");
     }
   };
 
   return (
-    <div>
+    <form>
       <input
         id="searchInput"
         placeholder="Buscar una ciudad..."
-        onKeyPress={(e) => {
-          if (e.key === "Enter") handleOnSearch();
-        }}
+        autoComplete="off"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        onSubmit={handleOnSearch}
       />
-      <button onClick={handleOnSearch}>Buscar</button>
-    </div>
+      <button type="submit" onClick={handleOnSearch}>Buscar</button>
+    </form>
   );
 }

@@ -3,11 +3,11 @@ import CardTemp from "./CardTemp";
 import PropTypes from "prop-types";
 
 export default function Card(props) {
-  const { max, min, name, img, onClose, id} = props; //destructuring de cosas pasadas por props
-  // acá va tu código
+  const { max, min, name, img, onClose, id} = props; 
   function handleOnClose() {
-    if(typeof onClose === "function") onClose();
+    if (typeof onClose === "function") onClose();
   }
+
   return (
     <div key={id}>
       <button onClick={handleOnClose}>X</button>
