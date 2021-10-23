@@ -1,36 +1,18 @@
-<<<<<<< Updated upstream
-import React from 'react';
-=======
 import { func } from "prop-types";
 import React from "react";
 import styles from "./SearchBar.module.css";
 import { IoSearchOutline } from "react-icons/io5";
->>>>>>> Stashed changes
 
-
-<<<<<<< Updated upstream
 export default function SearchBar({onSearch}) {
-  // acá va tu código
-    const handleOnSearch = () => {
-      const input = document.getElementById("searchInput");
-      onSearch(input.value);
-      input.value = "";
-    };
+  
+  const [search, setSearch] = React.useState("");
 
-  return <div>
-    <input
-    id="searchInput"
-    placeholder="Buscar una ciudad..."
-    onKeyPress={(e) => {
-      if (e.key === "Enter") handleOnSearch();
-    }}
-    />
-    <button onClick={handleOnSearch}>
-    Buscar
-    </button>
-  </div>
-};
-=======
+
+  const handleOnSearch = (event) => {
+    event.preventDefault();
+    onSearch(search);
+    setSearch("");
+  }
   return (
     <form className={styles.searchBar}>
       <input
@@ -47,4 +29,3 @@ export default function SearchBar({onSearch}) {
     </form>
   );
 }
->>>>>>> Stashed changes
