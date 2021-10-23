@@ -10,6 +10,7 @@
     align-items: center;
   
     position: relative;
+    background-color: rgba(194, 194, 194, 0.468);
   }
   .cityName {
     grid-column: 1 / span 3;
