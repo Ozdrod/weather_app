@@ -1,8 +1,8 @@
 :root {
   --color-prussian-blue: #023047;
-
   --btn-danger-color: var(--color-maximum-red);
   --btn-color: var(--color-prussian-blue);
+
 }
 
 body {

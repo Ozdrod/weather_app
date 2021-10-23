@@ -1,11 +1,15 @@
 import React from 'react'
 import styles from "./BkgVideo.module.css";
+import ReactPlayer from 'react-player';
 
 function BkgVideo() {
     return (
-        <video autoPlay muted loop className={styles.bkgVideo}>
-            <source src="../media/main_background.mp4" type="video/mp4"/>
-        </video>
+    <ReactPlayer
+            className={styles.bkgVideo}
+            playing={true}
+            loop
+            muted={true}
+            url="video.mp4" />
     )
 }
 
