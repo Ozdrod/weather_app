@@ -3,6 +3,8 @@ import "./App.css";
 import Cards from "./components/Cards.jsx";
 import SearchBar from "./components/SearchBar.jsx";
 import BkgVideo from "./components/BkgVideo.jsx";
+import Background from "./components/Background";
+import image from "./assets/background.png"
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -51,6 +53,7 @@ function App() {
   }
   return (
     <div className="App">
+      <Background src={image}/>
       <BkgVideo/>
       <SearchBar onSearch={onSearch} />
       <Cards cities={cities} onRemove={handleRemoveCity}/>
