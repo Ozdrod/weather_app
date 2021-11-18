@@ -1,21 +1,11 @@
 import React from 'react'
-import styled from "styled-components";
-
-const Container = styled.div`
-    width: 100w;
-    height: 100vh;
-`
-const Image = styled.img`
-width: 100w;
-height: 100vh;
-`
-
-
+import styles from "./Background.module.css";
+    
 function Background({src}) {
     return (
-        <Container>
-            <Image src={src} alt="background clouds" />
-        </Container>
+        <div className={styles.container}>
+            <img className={styles.image} src={src} alt="background clouds" />
+        </div>
     )
 }
 

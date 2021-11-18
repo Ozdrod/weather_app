@@ -10,7 +10,8 @@
     align-items: center;
   
     position: relative;
-    background-color: rgba(194, 194, 194, 0.468);
+    background-color: rgba(194, 194, 194, 0.036);
+
   }
   .cityName {
     grid-column: 1 / span 3;
@@ -43,10 +44,4 @@
   .closeButton:hover {
     color: white;
     background-color: red;
-  }
-  
-  @media screen and (min-width: 576px) {
-    .card {
-      width: 25rem;
-    }
   }

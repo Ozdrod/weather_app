@@ -4,12 +4,14 @@ import ReactPlayer from 'react-player';
 
 function BkgVideo() {
     return (
-    <ReactPlayer
+    <div className={styles.mediaBox}>
+        <ReactPlayer
             className={styles.bkgVideo}
             playing={true}
             loop
             muted={true}
             url="video.mp4" />
+            </div>
     )
 }
 

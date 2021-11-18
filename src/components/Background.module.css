@@ -1,0 +1,11 @@
+.container {
+  position: absolute;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 0.2fr 1.6fr 1fr 1fr; 
+  gap: 0px 0px; 
+}
+.image {
+background-size: cover ;
+  filter: blur(3px);
+}

@@ -1,7 +1,8 @@
 .searchBar {
-  position: relative;
-  top: 0px;
-  left:  0px;
+  grid-area: input;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
 }
 
 
@@ -11,10 +12,10 @@
   padding: 0.5rem 4rem 0.5rem 0.5rem;
   color: white;
   box-sizing: border-box;
-  background-color: rgba(194, 194, 194, 0.468);
+  background-color: rgba(194, 194, 194, 0.153);
   border-style: solid;
   border-width: 2px;
-  border-color: none;
+  border-color: rgba(255, 255, 255, 0.639);
   border-radius: 0.5rem;
 
   font-size: 1.5rem;
@@ -28,6 +29,7 @@
 .searchBar > input::placeholder {
   font-weight: 300;
   font-size: 1.25rem;
+  color: white;
 }
 
 .searchBar > button {
@@ -57,8 +59,3 @@
   background-color: var(--btn-color);
 }
 
-@media screen and (min-width: 576px) {
-  .searchBar {
-    width: 25rem;
-  }
-}
